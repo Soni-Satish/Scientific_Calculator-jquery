@@ -1,0 +1,494 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<meta charset="UTF-8"> 
+	<meta name="viewport"
+		content="width=device-width, 
+					initial-scale=1.0"> 
+	<title> 
+		Image Resizer and Compressor 
+	</title> 
+	<link rel="stylesheet" href="styles.css"> 
+    <script src="./jquery-3.7.1.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+	 <style>
+		* {
+               margin: 0px;
+               padding: 0px;
+               
+            }
+		.navbar ul li a{
+	font-size: 18px;
+	font-weight:600;
+	margin-left: 5px;
+	color: black;
+	
+}
+.navbar ul li a:hover{
+
+  color: #63d60b;
+}
+.clr{
+	color: #63d60b;
+}
+.clr1{
+	background-color: #eeeeee;
+}
+.clr2{
+  background-color:#63d60b;
+}
+.clr3{
+  background-color: #dd5a5a;
+  border-radius: 20px;
+  color: white;
+}
+.ffamily{
+	font-family:Comic Sans MS;
+}
+.heading{
+  color:#837e7e;
+}
+.backclr{
+  background-color: white;
+}
+.footer{
+  color: white;
+}
+.icn{
+	text-decoration: none;
+	color: white;
+}
+.fonw
+{
+	font-family: Times New Roman;
+}
+
+	 </style>
+    <script>
+        $(document).ready(function(){
+
+		let imgInput = 
+			document.getElementById("imageInput"); 
+		let imgShow = 
+			document.getElementById("preview"); 
+		let rUnit = 
+			document.getElementById("resizeUnit"); 
+		let rwidth = 
+			document.getElementById("resizeWidth"); 
+		let rpercent = 
+			document.getElementById("resizePercentage"); 
+		let dimensions = 
+			document.getElementById("pixel-dimensions"); 
+		let perdimension = 
+			document.getElementById("percentage-dimensions"); 
+		let pxheight = 
+			document.getElementById( 
+				"pixel-height-dimensions"); 
+		let imgQuality = 
+			document.getElementById("quality"); 
+		let qualValue = 
+			document.getElementById("quality-value"); 
+		let resizeBtn = 
+			document.getElementById("resizeButton"); 
+		let downloadBtn = 
+			document.getElementById("downloadButton"); 
+		let imgDimensions = 
+			document.getElementById("image-dimensions"); 
+		let action = 
+			document.getElementById("action-form"); 
+		let imageResized = false; 
+
+		let updateQualVal = function() { 
+			qualValue.innerText = 
+				imgQuality.value;}; 
+		updateQualVal(); 
+		imgQuality.addEventListener("input", 
+			updateQualVal); 
+		imgInput.addEventListener( 
+			"change", 
+			function() { 
+				let imgFile =imgInput.files[0]; 
+				let readFile = new FileReader(); 
+				readFile.onload = ( 
+					e 
+				) => { 
+					imgShow.src = e.target.result; 
+					showActionForm(); 
+					showImageDim( 
+						imgFile 
+					);}; 
+				readFile.readAsDataURL( 
+					imgFile 
+				); 
+			}); 
+		const showActionForm = function() { 
+			action.style.display = "block";}; 
+		const showImageDim = ( 
+			imgFile 
+		) => { 
+			const image = new Image(); 
+			image.onload = function() { 
+				const width = image.width; 
+				const height = image.height; 
+				imgDimensions.innerText = 
+					`Image Dimensions: 
+					${width} x ${height} 
+					pixels`;}; 
+			image.src = 
+				URL.createObjectURL( 
+					imgFile 
+				);}; 
+		const dimFeildsShow = function(){ 
+			if ( 
+				rUnit.value === "pixels"
+			) { 
+				dimensions.style.display = 
+					"block"; 
+				pxheight.style.display = 
+					"block"; 
+				perdimension.style.display = 
+					"none"; 
+			} else { 
+				dimensions.style.display = 
+					"none"; 
+				pxheight.style.display = 
+					"none"; 
+				perdimension.style.display = 
+					"block"; 
+			}}; 
+		rUnit.addEventListener( 
+			"change", 
+			dimFeildsShow); 
+		const updateDimensions = function() { 
+			if ( 
+				rUnit.value === "pixels"
+			) { 
+				imgDimensions.innerText = 
+					`Image Dimensions: 
+					${rwidth.value} x 
+					${resizeHeight.value} 
+					pixels`; 
+			} else { 
+				const percentage = 
+					parseInt( 
+						rpercent.value 
+					); 
+				if ( 
+					!isNaN(percentage) 
+				) { 
+					const width = 
+						(imgShow.width * 
+							percentage) / 100; 
+					const height = 
+						(imgShow.height * 
+							percentage) / 100; 
+					imgDimensions.innerText = 
+					`Image Dimensions: 
+					${Math.round(width)} x 
+					${Math.round(height)} 
+					pixels`; 
+				}}}; 
+		resizeBtn.addEventListener( 
+			"click", 
+			function() { 
+				if (imageResized) { 
+					return; 
+				} 
+				let wid; 
+				let height; 
+				if ( 
+					rUnit.value === 
+					"percentage"
+				) { 
+					const percentage = 
+						parseInt( 
+							rpercent.value 
+						); 
+					if ( 
+						isNaN( 
+							percentage 
+						) || 
+						percentage < 
+						1 || 
+						percentage > 100 
+					) { 
+						alert( 
+							`Please enter a valid 
+							percentage (1-100).` 
+						); 
+						return;} 
+					wid = 
+						(imgShow.width * 
+							percentage) / 100; 
+					height = 
+						(imgShow.height * 
+							percentage) / 100; 
+					rwidth.value = wid; 
+					resizeHeight.value = height; 
+				} else { 
+					wid = parseInt( 
+						rwidth.value 
+					); 
+					height = parseInt( 
+						resizeHeight.value 
+					); 
+				} 
+				let imageQuality = 
+					parseInt( 
+						imgQuality.value) / 100; 
+				let canvas = 
+					document.createElement( 
+						"canvas"); 
+				let ctx = 
+					canvas.getContext( 
+						"2d"); 
+				let imageObj = 
+					new Image(); 
+				imageObj.onload = 
+					() => { 
+						canvas.width = 
+							wid; 
+						canvas.height = 
+							height; 
+						ctx.drawImage( 
+							imageObj, 
+							0, 0, wid, height); 
+						let resizedDataUrl = 
+							canvas.toDataURL( 
+								"image/jpeg", 
+								imageQuality 
+							); 
+						let resizedImage = 
+							new Image(); 
+						resizedImage.src = 
+							resizedDataUrl; 
+						imgShow.src = 
+							resizedDataUrl; 
+						downloadBtn.style.display = 
+							"inline-block"; 
+						downloadBtn.href = 
+							resizedDataUrl; 
+						downloadBtn.download = 
+							"compressed-image.jpg"; 
+						updateDimensions(); 
+						imageResized = true; 
+					}; 
+				imageObj.src = 
+					imgShow.src; 
+			});});
+
+        
+    </script>
+</head> 
+
+<body> 
+
+		<div class="container-fluid">
+			<div class="row bg-dark p-2">
+				<div class="col-sm-12 text-light ps-5">
+				  <i class="fa-solid fa-envelope clr"></i> alphacod123@gmail.com
+				<i class="fa-solid fa-phone clr ms-2"></i> +91 7270841211&emsp;
+				</div>
+			</div>
+			<!-- start menu  -->
+			<div class="row p-2 backclr sticky-top">
+				<div class="col-sm-2 fs-2 fw-bold pt-2 ps-5">Advance <x class="clr">Calculator</x></div>
+				<div class="col-sm-10">
+					<nav class="navbar navbar-expand-lg">
+						<div class="container-fluid">
+						  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						  
+							<div class="navbar-toggler-icon my-toggler d-flex justify-content-center align-items-center"
+							style="background-image: none"><i class="fa-solid fa-bars" style="color:#eeeeee"></i></div>
+						  </button>
+						  <div class="collapse navbar-collapse" id="navbarNav">
+							<ul class="navbar-nav">
+							  <li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+							  </li>
+							  <li class="nav-item">
+								<a class="nav-link" href="scientific1.html">Scientific</a>
+							  </li>
+							  <li class="nav-item">
+								<a class="nav-link" href="age.html">Age</a>
+							  </li>
+							  <li class="nav-item">
+								<a class="nav-link" href="currency.html">Currency</a>
+							  </li>
+							  <li class="nav-item">
+								<a class="nav-link" href="emi.html">EMI</a>
+							  </li>
+							  <li class="nav-item">
+								<a class="nav-link" href="weather.html">Weather</a>
+							  </li>
+							  <li class="nav-item">
+								<a class="nav-link" href="mensuration.html">Mensuration</a>
+							  </li>
+							  <li class="nav-item">
+								<a class="nav-link" href="capacity.html">Capacity</a>
+							  </li>
+							  <li class="nav-item">
+								<a class="nav-link" href="bmi.html">BMI</a>
+							  </li>
+							  <li class="nav-item">
+								<a class="nav-link" href="photoCom.html">Image Compressor</a>
+							  </li>
+							  <li class="nav-item">
+								<a class="nav-link" href="submark.html">Subject Marks</a>
+							  </li>
+							</ul>
+						  </div>
+						</div>
+					  </nav>
+				</div>
+				<!-- <div class="col-sm-2 pt-2 ps-3"><a href="#bt"><input class="btn text-light" style="background-color: #ce1212;border-radius: 20px;width: 120px;" type="button" value="Book a Table"/></a></div> -->
+			</div>
+			<!-- end menu --> 
+		<div id="main">
+			<h1 class="title" style="width: 50%; margin-left: 25%;"> 
+				Image Resizer and Compressor 
+			</h1> 
+	
+			<div class="image-upload"> 
+				<label for="imageInput"
+					class="upload-label"> 
+					<i class="fas fa-cloud-upload-alt"> 
+					</i> Upload an Image 
+				</label> 
+				<input type="file"
+					id="imageInput"
+					accept="image/*"> 
+			</div> 
+	
+			<div id="action-form"
+				style="display: none;"> 
+				<div class="output"> 
+					<h2 class="preview-label"> 
+						Preview: 
+					</h2> 
+					<img id="preview" alt="Preview"> 
+					<p id="image-dimensions"
+					style="margin-top: 10px;"> 
+					</p> 
+				</div> 
+	
+				<div class="row">
+					<div class="controls"> 
+						<div class="control-group col-lg-10 col-sm-12"> 
+							<label for="resizeUnit"> 
+								Unit: 
+							</label> 
+							<select id="resizeUnit"> 
+								<option value="pixels"> 
+									Pixels 
+								</option> 
+								<option value="percentage"> 
+									Percentage 
+								</option> 
+							</select> 
+						</div> 
+		
+						<div class="control-group col-lg-10 col-sm-12""
+							id="pixel-dimensions"> 
+							<label for="resizeWidth"> 
+								Width: 
+							</label> 
+							<input type="number"
+								id="resizeWidth"
+								placeholder="Width"> 
+							<span>px</span> 
+						</div> 
+		
+						<div class="control-group col-lg-10 col-sm-12""
+							id="percentage-dimensions"
+							style="display: none;"> 
+							<label for="resizePercentage"> 
+								Percent: 
+							</label> 
+							<input type="number"
+								id="resizePercentage"
+								placeholder="Percentage"
+								min="1"
+								max="100"> 
+							<span>%</span> 
+						</div> 
+		
+						<div class="control-group col-lg-10 col-sm-12""
+							id="pixel-height-dimensions"> 
+							<label for="resizeHeight"> 
+								Height: 
+							</label> 
+							<input type="number"
+								id="resizeHeight"
+								placeholder="Height"> 
+							<span>px</span> 
+						</div> 
+		
+						<div class="control-group quality-group col-lg-8 col-sm-12""> 
+							<label for="quality" style="margin-right: 15%;"> 
+								Quality: 
+							</label> 
+							<input type="range"
+								id="quality"
+								min="1"
+								max="100"
+								value="80"> 
+							<span id="quality-value"
+								class="quality-value"> 
+							80 
+							</span> 
+						</div> 
+		
+						<button id="resizeButton" style="margin-left: 42%;"> 
+							Resize & Compress 
+						</button> 
+						<a id="downloadButton"
+						class="download-button"
+						style="display: none"> 
+							Download Compressed Image 
+						</a> 
+		
+					</div> 
+				</div>
+			</div> 
+		</div>
+		   <!-- footer start  -->
+		   <div class="row bg-dark pt-5">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10 pb-4" style="border-bottom: 1px solid white;">
+			  <div class="row footer">
+				<div class="col-sm-3"><p class="fs-5 fw-bold"><i class="fa-solid fa-location-dot"></i> &nbsp; Address</p><br/>
+				  <p class="ps-4">Chitrakoot Dham Karwi<br/>Sitapur Chauraha <br/>Uttar Pradesh 210205 India</p>
+				</div>
+				<div class="col-sm-3"><p class="fs-5 fw-bold"><i class="fa-solid fa-phone"></i> &nbsp; Contact Us</p><br/>
+				  <p class="ps-4"><b>Phone:+91</b> 7270841211<br/>+91 7270895438<br/><b>Email:</b> alphacod123@gmail.com</p>
+				</div>
+				<div class="col-sm-3"><p class="fs-5 fw-bold"><i class="fa-regular fa-clock"></i> &nbsp; About Us</p><br/>
+				  <p class="ps-4"><b>Mon-Sat:</b> 11AM-23:59PM<br/>Sunday: 11AM-5PM</p>
+				</div>
+				<div class="col-sm-3"><p class="fs-5 fw-bold"> &nbsp; Follow Us</p><br/>
+				  <a href="http://www.instagram.com" class="icn"> <i class="fa-brands fa-instagram ps-4 fs-2"></i></a>
+							<a href="http://twitter.com"class="icn"> <i class="fa-brands fa-twitter ps-3 fs-2"></i></a>
+						   <a href="http://www.facebook.com"class="icn"><i class="fa-brands fa-facebook ps-3 fs-2"></i></a>
+							 <a href="http://www.linkedin.com"class="icn"> <i class="fa-brands fa-linkedin ps-3 fs-2"></i></a>
+				</div>
+			  </div>
+			</div>
+			<div class="col-sm-1"></div>
+			<div class="row footer d-flex justify-content-center pt-5 pb-5">
+			  <div class="col-sm-4 text-center">&copy; Copyright <b>Advance Calculator. All Rights Reserved<br/>Designed by Team Alpha Coders</b></div>
+			</div>
+		   </div>
+		   <!-- footer end  -->
+	  </div>
+		<!-- script tag code end  -->
+	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	</div> 
+	
+</body> 
+
+</html>

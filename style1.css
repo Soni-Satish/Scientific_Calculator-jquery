@@ -1,0 +1,88 @@
+    /* body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    background-image: url(./bgmi.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+} */
+
+.emi-calculator {
+  
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(209, 223, 219);
+    border: 1px solid #d6c8c8;
+    border-radius: 5px;
+    min-height: 550px;
+   border-color: rgb(red, green, blue);
+   border-radius: 15px;
+
+   
+    
+}
+#wlcm
+{
+    font-size: 30px;
+    color: #63d60b;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+.cl {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.btss {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #63d60b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  
+}
+
+.btss:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#emi:hover
+{
+ min-zoom: 40px;
+}
+#emih1
+{
+    font-size: 20px;
+    font-weight: bold;
+    color: #63d60b;
+    text-align: center;
+}
+#main
+{
+    /* height: 50px; */
+    font-size:30px;
+    font-weight: bold;
+    color: #63d60b;
+    text-align: center;
+}
+.clr2{
+    background-color:#63d60b;
+  }
+
