@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        .navbar ul li a {
+            font-size: 18px;
+            font-weight: 600;
+            margin-left: 5px;
+            color: black;
+
+        }
+
+        .navbar ul li a:hover {
+
+            color: #63d60b;
+        }
+
+        .clr {
+            color: #63d60b;
+        }
+
+        .clr1 {
+            background-color: #eeeeee;
+        }
+
+        .clr2 {
+            background-color: #63d60b;
+        }
+
+        .clr3 {
+            background-color: #dd5a5a;
+            border-radius: 20px;
+            color: white;
+        }
+
+        .ffamily {
+            font-family: Comic Sans MS;
+        }
+
+        .heading {
+            color: #837e7e;
+        }
+
+        .backclr {
+            background-color: white;
+        }
+
+        .footer {
+            color: white;
+        }
+
+        .icn {
+            text-decoration: none;
+            color: white;
+        }
+
+        .fonw {
+            font-family: Times New Roman;
+        }
+
+        .menscal {
+            width: 100%;
+        }
+        /* * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Old Standard TT', serif;
+        } */
+        .container {
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            border: 2px solid rgb(32, 33, 41);
+            width: 900px;
+            padding: 20px 30px ;
+            box-shadow: 2px 8px 8px 2px rgb(28, 28, 27);
+            margin: auto;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            grid-gap: 5px;
+            font-size: 19px; 
+        }
+        body {
+            /* background-image: linear-gradient(to left, rgb(231, 235, 240), rgb(11, 57, 126)); */
+            background-image: url("./pexels-karolina-grabowska-5412432.jpg");
+            background-size: 100%;
+            background-position: 100%;
+            
+            background-repeat:no-repeat;
+        }
+        .ayush3 {
+            background-color: white;
+            margin-top: 40px;
+            margin-left: 100px;
+            margin-right: 226px;
+            border: 2px solid rgb(32, 33, 41);
+            border-color: darkgreen;
+            padding: 20px 30px 20px;
+            box-shadow: 2px 8px 8px 2px rgb(28, 28, 27);
+        }
+        .container div {
+            padding: 10px;
+            font-size: 29px;
+            font-weight: bold;
+            color: black;
+            border-radius: 10px;
+            
+            
+        }
+    
+    
+        
+        
+        input {
+            font-size: 30px;
+        }
+        input {
+            color: black;
+            outline: none;
+            border-style: solid;
+            border-color: green;
+            border: 2px solid rgb(32, 33, 41);
+            padding: 10px 20px 10px;
+            border-radius: 8px 8px 8px 8px;
+            box-shadow: 2px 8px 8px 2px rgb(28, 28, 27);
+            cursor: pointer;
+        }
+        button:hover {
+            background: #323094;
+            color: white;
+            border: 2px solid rgb(32, 33, 41);
+            border-radius: 2px 8px 8px 2px;
+            padding: 5px 10px 5px;
+            box-shadow: 2px 8px 8px 2px rgb(28, 28, 27);
+        }
+        .ayush {
+            border: 2px solid rgb(32, 33, 41);
+            border-radius: 2px 8px 8px 2px;
+            padding: 5px 10px 5px;
+            box-shadow: 2px 8px 8px 2px rgb(28, 28, 27);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row bg-dark p-2">
+            <div class="col-sm-12 text-light ps-5">
+                <i class="fa-solid fa-envelope clr"></i> alphacod123@gmail.com
+                <i class="fa-solid fa-phone clr ms-2"></i> +91 7270841211&emsp;
+            </div>
+        </div>
+        <!-- start menu  -->
+        <div class="row p-3 backclr sticky-top">
+            <div class="col-sm-3 fs-3 fw-bold pt-2 ps-5">Advance <x class="clr">Calculator</x>
+            </div>
+            <div class="col-sm-9">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+
+                            <div class="navbar-toggler-icon my-toggler d-flex justify-content-center align-items-center"
+                                style="background-image: none"><i class="fa-solid fa-bars" style="color:#eeeeee"></i>
+                            </div>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="scientific1.html">Scientific</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="age.html">Age</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="currency.html">Currency</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="emi.html">EMI</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="weather.html">Weather</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="mensuration.html">Mensuration</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="capacity.html">Capacity</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="bmi.html">BMI</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="photoCom.html">Image Compressor</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="submark.html">Subject Marks</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- <div class="col-sm-2 pt-2 ps-3"><a href="#bt"><input class="btn text-light" style="background-color: #ce1212;border-radius: 20px;width: 120px;" type="button" value="Book a Table"/></a></div> -->
+        </div>
+        <!-- end menu -->
+        <div class="container">
+            <div id="ayush1">
+                <div id="ayush2">
+                    
+                    <span style="font-size: 5vw;font-family: algerian;"> --Calculator--</span><br><br>
+                    <span style="font-size: 3vw;font-family:algerian;">{ CAPACITY CALCULATOR }</span>
+
+                </div>
+            </div>
+
+            <input style="font-family: algerian;" type="number" id="kilogram" placeholder="Enter a kilogram">
+            <button class="ayush" id="btn" style="color:black;
+             font-size: 15px; cursor: pointer; font-family: algerian;">convert to gram</button>
+            <br>
+            <br>
+            <input style="font-family: algerian;" type="number" id="centimeter" placeholder="Enter a centimeter">
+            <button class="ayush" id="btn1" style="color:black;
+            font-size: 15px; cursor: pointer; font-family: algerian;">convert to meter</button>
+            <br>
+            <br>
+            <input style="font-family: algerian;" type="number" id="liter" placeholder="Enter a liter">
+            <button class="ayush" id="btn2" style="color:black;
+            font-size: 15px; cursor: pointer; font-family: algerian;">convert to mlilli</button>
+            <br>
+            <br>
+            <input style="font-family: algerian;" type="number" id="tonne" placeholder="Enter a tonne">
+            <button class="ayush" id="btn3" style="color:black;
+            font-size: 15px; cursor: pointer; font-family: algerian;">convert to kilog</button>
+            <br>
+            <br>
+            <input style="font-family: algerian;" type="number" id="quintal" placeholder="Enter a quintal">
+            <button class="ayush" id="btn4" style="color:black;
+            font-size: 15px; cursor: pointer; font-family: algerian;">convert to kilog</button>
+            <br>
+            <br>
+            <input style="font-family: algerian;" type="number" id="foot" placeholder="Enter a foot">
+            <button class="ayush" id="btn5" style="color:black;
+            font-size: 15px; cursor: pointer; font-family: algerian;">convert to inch</button>
+
+            <div class="ayush3">
+                <h4 style="font-family: algerian;"> Result </h4>
+                <div style="font-family: algerian;" id="result"></div>
+            </div>
+        </div>
+
+
+        <!-- footer start  -->
+        <div class="row bg-dark pt-5 mt-5">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 pb-4" style="border-bottom: 1px solid white;">
+                <div class="row footer">
+                    <div class="col-sm-3">
+                        <p class="fs-5 fw-bold"><i class="fa-solid fa-location-dot"></i> &nbsp; Address</p><br />
+                        <p class="ps-4">Chitrakoot Dham Karwi<br />Sitapur Chauraha <br />Uttar Pradesh 210205 India</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="fs-5 fw-bold"><i class="fa-solid fa-phone"></i> &nbsp; Contact Us</p><br />
+                        <p class="ps-4"><b>Phone:+91</b> 7270841211<br />+91 7270895438<br /><b>Email:</b>
+                            alphacod123@gmail.com</p>
+                    </div>
+                    <div class="col-sm-3"><p class="fs-5 fw-bold"><i class="fa-brands fa-servicestack"></i> &nbsp; Our Services</p><br/>
+                        <p class="ps-4">Web Designing<br/>Help & Support<br>Privacy Policy</p>
+                      </div>
+                    <div class="col-sm-3">
+                        <p class="fs-5 fw-bold"> &nbsp; Follow Us</p><br />
+                        <a href="http://www.instagram.com" class="icn"> <i
+                                class="fa-brands fa-instagram ps-4 fs-2"></i></a>
+                        <a href="http://twitter.com" class="icn"> <i class="fa-brands fa-twitter ps-3 fs-2"></i></a>
+                        <a href="http://www.facebook.com" class="icn"><i
+                                class="fa-brands fa-facebook ps-3 fs-2"></i></a>
+                        <a href="http://www.linkedin.com" class="icn"> <i
+                                class="fa-brands fa-linkedin ps-3 fs-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="row footer d-flex justify-content-center pt-5 pb-5">
+                <div class="col-sm-4 text-center">&copy; Copyright <b>Advance Calculator. All Rights
+                        Reserved<br />Designed by Team Alpha Coders</b></div>
+            </div>
+        </div>
+        <!-- footer end  -->
+    </div>
+    <!-- script tag code end  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+        <script src="./js/jquery-3.7.1.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#btn").click(function () {
+                    const kilogram = parseFloat($("#kilogram").val());
+                    const gram = kilogram * 1000 + 'gram';
+                    $("#result").text ( "result in gram: "+ gram);
+                });
+                $("#btn1").click(function () {
+                    const centimeter = parseFloat($("#centimeter").val());
+                    const meter = centimeter / 100 + "meter";
+                    $("#result").text( "result in meter: "+meter);
+    
+                });
+                $("#btn2").click(function () {
+                    const liter = parseFloat($("#liter").val());
+                    const mililiter = liter * 1000 + "milliliter";
+                    $("#result").text ("result in milliliter: "+ mililiter);
+                });
+                $("#btn3").click(function () {
+                    const tonne = parseFloat($("#tonne").val());
+                    const kilogram = tonne * 1000 + "kilogram";
+                    $("#result").text ("result in kilogram: "+ kilogram);
+    
+                });
+                $("#btn4").click(function () {
+                    const quintal = parseFloat($("#quintal").val());
+                    const kilogram = quintal * 100 + "kilogram";
+                    $("#result").text("result in kilogram: "+ kilogram);
+                });
+                $("#btn5").click(function () {
+                    const foot = parseFloat($("#foot").val());
+                    const inch = foot * 12 + "inch";
+                    $("#result").text("result in inch: " +inch);
+    
+                });
+    
+            });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="JS.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Currency conversion function
+            $("#convert").click(function () {
+                var amount = parseFloat($("#amount").val());
+                var from = $("#fromCurrency").val();
+                var to = $("#toCurrency").val();
+    
+                // Define fixed exchange rates
+                var exchangeRates = {
+                    "USD": 1,
+                    "EUR": 0.88,
+                    "GBP": 0.78,
+                    "AED": 0.27,
+                    "ARS": 0.011,
+                    "AUD": 0.65,
+                    "BGN": 0.55,
+                    "BRL": 0.20,
+                    "BSD": 0.01,
+                    "CAD": 0.73,
+                    "CHF": 1.11,
+                    "CLP": 0.0011,
+                    "CNY": 0.14,
+                    "COP": 0.00025,
+                    "CZK": 0.044,
+                    "DKK": 0.14,
+                    "DOP": 0.18,
+                    "EGP": 0.033,
+                    "FJD": 0.44,
+                    "GTQ": 0.13,
+                    "HKD": 0.13,
+                    "HRK": 0.14,
+                    "HUF": 0.0028,
+                    "IDR": 0.000064,
+                    "ILS": 0.25,
+                    "INR": 74.89,
+                    "ISK": 0.0072,
+                    "JPY": 0.0067,
+                    "KRW": 0.00076,
+                    "KZT": 0.0022,
+                    "MXN": 0.057,
+                    "MYR": 0.21,
+                    "NOK": 0.091,
+                    "NZD": 0.60,
+                    "PAB": 0.01,
+                    "PEN": 0.27,
+                    "PHP": 0.018,
+                    "PKR": 0.0036,
+                    "PLN": 0.24,
+                    "PYG": 0.00013,
+                    "RON": 0.22,
+                    "RUB": 0.011,
+                    "SAR": 0.27,
+                    "SEK": 0.092,
+                    "SGD": 0.74,
+                    "THB": 0.028,
+                    "TRY": 0.035,
+                    "TWD": 0.031,
+                    "UAH": 0.028,
+                    "UYU": 0.025,
+                    "VND": 0.000041,
+                    "ZAR": 0.005
+                    // Add more currencies with fixed rates here
+                };
+    
+                // Calculate the converted amount
+                var convertedAmount = (amount / exchangeRates[from]) * exchangeRates[to];
+                $("#result").val(convertedAmount.toFixed(2));
+            });
+        });
+    </script>
+    
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        .navbar ul li a {
+            font-size: 18px;
+            font-weight: 600;
+            margin-left: 5px;
+            color: black;
+
+        }
+
+        .navbar ul li a:hover {
+
+            color: #63d60b;
+        }
+
+        .clr {
+            color: #63d60b;
+        }
+
+        .clr1 {
+            background-color: #eeeeee;
+        }
+
+        .clr2 {
+            background-color: #63d60b;
+        }
+
+        .clr3 {
+            background-color: #dd5a5a;
+            border-radius: 20px;
+            color: white;
+        }
+
+        .ffamily {
+            font-family: Comic Sans MS;
+        }
+
+        .heading {
+            color: #837e7e;
+        }
+
+        .backclr {
+            background-color: white;
+        }
+
+        /* Add your custom styles here */
+
+        /* Style the container */
+        .container {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style the h1 header */
+        h1 {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        /* Style the form elements */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        
+      
+
+        /* Style the result text */
+      
+        .exchange {
+            font-family: "Sansita Swashed", cursive;
+            font-size: 25px;
+            color: black;
+            padding-right: 20px;
+        }
+        #convert{
+            font-family: "Sansita Swashed", cursive;
+            font-size: 20px;
+            color: #00539cff;
+            padding-right: 20px;
+            
+            
+        }
+
+
+
+
+
+        #result {
+            width: 30%;
+            cursor: default;
+            font-family: "Sansita Swashed", cursive;
+        }
+
+        .footer {
+            color: white;
+        }
+
+        .icn {
+            text-decoration: none;
+            color: white;
+        }
+
+        .fonw {
+            font-family: Times New Roman;
+        }
+
+        .menscal {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row bg-dark p-2">
+            <div class="col-sm-12 text-light ps-5">
+                <i class="fa-solid fa-envelope clr"></i> alphacod123@gmail.com
+                <i class="fa-solid fa-phone clr ms-2"></i> +91 7270841211&emsp;
+            </div>
+        </div>
+        <!-- start menu  -->
+        <div class="row p-3 backclr sticky-top">
+            <div class="col-sm-3 fs-3 fw-bold pt-2 ps-5">Advance <x class="clr">Calculator</x>
+            </div>
+            <div class="col-sm-9">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+
+                            <div class="navbar-toggler-icon my-toggler d-flex justify-content-center align-items-center"
+                                style="background-image: none"><i class="fa-solid fa-bars" style="color:#eeeeee"></i>
+                            </div>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="scientific1.html">Scientific</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="age.html">Age</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="currency.html">Currency</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="emi.html">EMI</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="weather.html">Weather</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="mensuration.html">Mensuration</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="capacity.html">Capacity</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="bmi.html">BMI</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="photoCom.html">Image Compressor</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="submark.html">Subject Marks</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- <div class="col-sm-2 pt-2 ps-3"><a href="#bt"><input class="btn text-light" style="background-color: #ce1212;border-radius: 20px;width: 120px;" type="button" value="Book a Table"/></a></div> -->
+        </div>
+        <!-- end menu -->
+        <div class="container mt-5">
+            <h1>Currency Calculator</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fromCurrency">From Currency</label>
+                        <select id="fromCurrency" class="form-control">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="AED">AED</option>
+                            <option value="ARS">ARS</option>
+                            <option value="AUD">AUD</option>
+                            <option value="BGN">BGN</option>
+                            <option value="BRL">BRL</option>
+                            <option value="BSD">BSD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="CHF">CHF</option>
+                            <option value="CNY">CNY</option>
+                            <option value="COP">COP</option>
+                            <option value="CZK">CZK</option>
+                            <option value="DKK">DKK</option>
+                            <option value="DOP">DOP</option>
+                            <option value="EGP">EGP</option>
+                
+                            <option value="FJD">FJD</option>
+                            <option value="GBP">GBP</option>
+                            <option value="GTQ">GTQ</option>
+                            <option value="HKD">HKD</option>
+                            <option value="HRK">HRK</option>
+                            <option value="HUF">HUF</option>
+                            <option value="IDR">IDR</option>
+                            <option value="ILS">ILS</option>
+                            <option value="INR">INR</option>
+                            <option value="ISK">ISK</option>
+                            <option value="JPY">JPY</option>
+                            <option value="KRW">KRW</option>
+                            <option value="KZT">KZT</option>
+                            <option value="MXN">MXN</option>
+                            <option value="MYR">MYR</option>
+                            <option value="NOK">NOK</option>
+                            <option value="NZD">NZD</option>
+                            <option value="PAB">PAB</option>
+                            <option value="PEN">PEN</option>
+                            <option value="PHP">PHP</option>
+                            <option value="PKR">PKR</option>
+                            <option value="PLN">PLN</option>
+                            <option value="PYG">PYG</option>
+                            <option value="RON">RON</option>
+                            <option value="RUB">RUB</option>
+                            <option value="SAR">SAR</option>
+                            <option value="SEK">SEK</option>
+                            <option value="SGD">SGD</option>
+                            <option value="THB">THB</option>
+                            <option value="TRY">TRY</option>
+                            <option value="TWD">TWD</option>
+                            <option value="UAH">UAH</option>
+                            <option value="USD" selected>USD</option>
+                            <option value="UYU">UYU</option>
+                            <option value="VND">VND</option>
+                            <option value="ZAR">ZAR</option>
+                            <!-- Add more currency options as needed -->
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" class="form-control" placeholder="Enter amount">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="toCurrency">To Currency</label>
+                        <select id="toCurrency" class="form-control">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="AED">AED</option>
+                            <option value="ARS">ARS</option>
+                            <option value="AUD">AUD</option>
+                            <option value="BGN">BGN</option>
+                            <option value="BRL">BRL</option>
+                            <option value="BSD">BSD</option>
+                            <option value="CAD">CAD</option>
+                            <option value="CHF">CHF</option>
+                            <option value="CNY">CNY</option>
+                            <option value="COP">COP</option>
+                            <option value="CZK">CZK</option>
+                            <option value="DKK">DKK</option>
+                            <option value="DOP">DOP</option>
+                            <option value="EGP">EGP</option>
+                
+                            <option value="FJD">FJD</option>
+                            <option value="GBP">GBP</option>
+                            <option value="GTQ">GTQ</option>
+                            <option value="HKD">HKD</option>
+                            <option value="HRK">HRK</option>
+                            <option value="HUF">HUF</option>
+                            <option value="IDR">IDR</option>
+                            <option value="ILS">ILS</option>
+                            <option value="INR">INR</option>
+                            <option value="ISK">ISK</option>
+                            <option value="JPY">JPY</option>
+                            <option value="KRW">KRW</option>
+                            <option value="KZT">KZT</option>
+                            <option value="MXN">MXN</option>
+                            <option value="MYR">MYR</option>
+                            <option value="NOK">NOK</option>
+                            <option value="NZD">NZD</option>
+                            <option value="PAB">PAB</option>
+                            <option value="PEN">PEN</option>
+                            <option value="PHP">PHP</option>
+                            <option value="PKR">PKR</option>
+                            <option value="PLN">PLN</option>
+                            <option value="PYG">PYG</option>
+                            <option value="RON">RON</option>
+                            <option value="RUB">RUB</option>
+                            <option value="SAR">SAR</option>
+                            <option value="SEK">SEK</option>
+                            <option value="SGD">SGD</option>
+                            <option value="THB">THB</option>
+                            <option value="TRY">TRY</option>
+                            <option value="TWD">TWD</option>
+                            <option value="UAH">UAH</option>
+                            <option value="USD" selected>USD</option>
+                            <option value="UYU">UYU</option>
+                            <option value="VND">VND</option>
+                            <option value="ZAR">ZAR</option>
+                            <!-- Add more currency options as needed -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                   <center> <button id="convert">Exchange my money now</button></center>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <div>
+                        <p class="exchange">Converted Amount: <input type="text" value="" id="result" /></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- footer start  -->
+        <div class="row bg-dark pt-5 mt-5">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 pb-4" style="border-bottom: 1px solid white;">
+                <div class="row footer">
+                    <div class="col-sm-3">
+                        <p class="fs-5 fw-bold"><i class="fa-solid fa-location-dot"></i> &nbsp; Address</p><br />
+                        <p class="ps-4">Chitrakoot Dham Karwi<br />Sitapur Chauraha <br />Uttar Pradesh 210205 India</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="fs-5 fw-bold"><i class="fa-solid fa-phone"></i> &nbsp; Contact Us</p><br />
+                        <p class="ps-4"><b>Phone:+91</b> 7270841211<br />+91 7270895438<br /><b>Email:</b>
+                            alphacod123@gmail.com</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="fs-5 fw-bold"><i class="fa-regular fa-clock"></i> &nbsp; About Us</p><br />
+                        <p class="ps-4"><b>Mon-Sat:</b> 11AM-23:59PM<br />Sunday: 11AM-5PM</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="fs-5 fw-bold"> &nbsp; Follow Us</p><br />
+                        <a href="http://www.instagram.com" class="icn"> <i
+                                class="fa-brands fa-instagram ps-4 fs-2"></i></a>
+                        <a href="http://twitter.com" class="icn"> <i class="fa-brands fa-twitter ps-3 fs-2"></i></a>
+                        <a href="http://www.facebook.com" class="icn"><i
+                                class="fa-brands fa-facebook ps-3 fs-2"></i></a>
+                        <a href="http://www.linkedin.com" class="icn"> <i
+                                class="fa-brands fa-linkedin ps-3 fs-2"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-1"></div>
+            <div class="row footer d-flex justify-content-center pt-5 pb-5">
+                <div class="col-sm-4 text-center">&copy; Copyright <b>Advance Calculator. All Rights
+                        Reserved<br />Designed by Team Alpha Coders</b></div>
+            </div>
+        </div>
+        <!-- footer end  -->
+    </div>
+    <!-- script tag code end  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

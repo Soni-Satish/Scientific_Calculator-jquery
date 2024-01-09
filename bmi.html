@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+               margin: 0px;
+               padding: 0px;
+               
+            }
+            .c
+    {
+        color: #63d60b;
+    }
+
+       .navbar ul li a{
+           font-size: 18px;
+           font-weight:600;
+           margin-left: 5px;
+           color: black;
+           
+       }
+       .navbar ul li a:hover{
+
+         color: #63d60b;
+       }
+       .clr{
+           color: #63d60b;
+       }
+       .clr1{
+           background-color: #eeeeee;
+       }
+       .clr2{
+         background-color:#63d60b;
+       }
+       .clr3{
+         background-color: #dd5a5a;
+         border-radius: 20px;
+         color: white;
+       }
+       .ffamily{
+           font-family:Comic Sans MS;
+       }
+       .heading{
+         color:#837e7e;
+       }
+       .backclr{
+         background-color: white;
+       }
+       .footer{
+         color: white;
+       }
+       .icn{
+           text-decoration: none;
+           color: white;
+       }
+       .fonw
+       {
+           font-family: Times New Roman;
+       }
+       .menscal
+       {
+         width: 100%;
+       }
+   </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="row bg-dark p-2">
+            <div class="col-sm-12 text-light ps-5">
+              <i class="fa-solid fa-envelope clr"></i> alphacod123@gmail.com
+            <i class="fa-solid fa-phone clr ms-2"></i> +91 7270841211&emsp;
+            </div>
+        </div>
+        <!-- start menu  -->
+        <div class="row p-3 backclr sticky-top">
+            <div class="col-sm-3 fs-3 fw-bold pt-2 ps-5">Advance <x class="clr">Calculator</x></div>
+            <div class="col-sm-9">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      
+                        <div class="navbar-toggler-icon my-toggler d-flex justify-content-center align-items-center"
+                        style="background-image: none"><i class="fa-solid fa-bars" style="color:#eeeeee"></i></div>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="scientific1.html">Scientific</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="age.html">Age</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="currency.html">Currency</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="emi.html">EMI</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="weather.html">Weather</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="mensuration.html">Mensuration</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="capacity.html">Capacity</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="bmi.html">BMI</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="photoCom.html">Image Compressor</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="submark.html">Subject Marks</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+            <!-- <div class="col-sm-2 pt-2 ps-3"><a href="#bt"><input class="btn text-light" style="background-color: #ce1212;border-radius: 20px;width: 120px;" type="button" value="Book a Table"/></a></div> -->
+        </div>
+        <!-- end menu -->
+        <!-- bmi start  -->
+        <div class="container-sm">
+          <div class="row">
+    
+              <div class="col-sm-6" id="left" style="background-color: black;margin-top: 25px;border-radius: 20px;">
+               <h2 style="text-align: center; color: #63d60b; margin-top: 30px;">BMI Calculator using jQuery</h2><hr style="color: #63d60b;">
+               <h5 style="text-align: justify; color: azure;">The Body Mass Index(BMI) calculator can be used to calculate BMI value by using weight and height.By using this calculator anyone can know that he or she is underweight, normal or overweight.We have a table of the readings given by World Health Organisation(WHO).</h5><br>
+                  <h3 style="text-align: center; color: #63d60b;">Table published by <b>WHO</b></h3>
+                  <table class="table table-dark table-striped">
+                      <tr class="c">
+                          <th>BMI</th>
+                          <th>Nutrition Status</th>
+                      </tr>
+                      <tr class="c">
+                          <td>Below 18.5</td>
+                          <td>Under weight</td>
+                      </tr>
+                      <tr class="c">
+                          <td>18.5-24.9</td>
+                          <td>Normal weight</td>
+                      </tr>
+                      <tr class="c">
+                          <td>25.0-29.9</td>
+                          <td>Pre-obesity</td>
+                      </tr>
+                      <tr class="c">
+                          <td>30.0-34.9</td>
+                          <td>Obesity class I</td>
+                      </tr>
+                      <tr class="c">
+                          <td>35.0-39.9</td>
+                          <td>Obesity class II</td>
+                      </tr>
+                      <tr class="c">
+                          <td>Above 40</td>
+                          <td>Obesity class III</td>
+                      </tr>
+                    </table>    
+              </div>
+              <div class="col-sm-6" id="right" style="background-color: black;margin-top: 25px; border-radius: 20px;">
+              <center>
+                  <h2 style="color: #63d60b; margin-top: 30px;">C a l c u l a t o r</h2>
+                  <hr style="color: #63d60b;">
+              
+              <input type="number" id="txt1"  placeholder="Enter height in Centimeters(cms)" style="width: 100%; text-align: center;height:40px ; margin-top: 20px;"><br><br>
+              
+              <input type="number" id="txt2" placeholder="Enter weight in Kilograms(Kgs)" style="width: 100%; text-align: center; height:40px ;"><br><br>
+              
+              <input type="button" value="G e t    B M I" id="btn" style="color: azure; background-color: #63d60b; width: 50%; height:40px ; "><br><br>
+              
+              <h3 id="bmi" style="color: #63d60b;"></h3><br>
+              <h4 id="status" style="color: #63d60b;"></h4>
+          </center>
+              </div>
+              
+      </div>   
+      </div>
+       <!-- bmi end  -->
+         <!-- footer start  -->
+         <div class="row bg-dark pt-5 mt-5">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10 pb-4" style="border-bottom: 1px solid white;">
+            <div class="row footer">
+              <div class="col-sm-3"><p class="fs-5 fw-bold"><i class="fa-solid fa-location-dot"></i> &nbsp; Address</p><br/>
+                <p class="ps-4">Chitrakoot Dham Karwi<br/>Sitapur Chauraha <br/>Uttar Pradesh 210205 India</p>
+              </div>
+              <div class="col-sm-3"><p class="fs-5 fw-bold"><i class="fa-solid fa-phone"></i> &nbsp; Contact Us</p><br/>
+                <p class="ps-4"><b>Phone:+91</b> 7270841211<br/>+91 7270895438<br/><b>Email:</b> alphacod123@gmail.com</p>
+              </div>
+              <div class="col-sm-3"><p class="fs-5 fw-bold"><i class="fa-brands fa-servicestack"></i> &nbsp; Our Services</p><br/>
+                <p class="ps-4">Web Designing<br/>Help & Support<br>Privacy Policy</p>
+              </div>
+              <div class="col-sm-3"><p class="fs-5 fw-bold"> &nbsp; Follow Us</p><br/>
+                <a href="http://www.instagram.com" class="icn"> <i class="fa-brands fa-instagram ps-4 fs-2"></i></a>
+                          <a href="http://twitter.com"class="icn"> <i class="fa-brands fa-twitter ps-3 fs-2"></i></a>
+                         <a href="http://www.facebook.com"class="icn"><i class="fa-brands fa-facebook ps-3 fs-2"></i></a>
+                           <a href="http://www.linkedin.com"class="icn"> <i class="fa-brands fa-linkedin ps-3 fs-2"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-1"></div>
+          <div class="row footer d-flex justify-content-center pt-5 pb-5">
+            <div class="col-sm-4 text-center">&copy; Copyright <b>Advance Calculator. All Rights Reserved<br/>Designed by Team Alpha Coders</b></div>
+          </div>
+         </div>
+         <!-- footer end  -->
+    </div>
+      <!-- script tag code end  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!-- bmi script  -->
+    <script src="./library/jquery-3.7.1.min.js"></script>
+    <script src="./library/jqueryui/jquery-ui.min.js"></script>
+    <link href="./library/jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <script>
+        $(document).ready(function(){
+            $("#txt1").focus();
+            $("#btn").click(function(){
+             var centimeter=$("#txt1").val();
+            var weight=$("#txt2").val();
+           var meter=centimeter/100;
+           var height_meter=meter*meter
+           var bmi=weight/height_meter
+           $("#bmi").html("BMI of your body is: "+bmi.toFixed(1)+"<hr style='color:#63d60b;'>")
+             if(bmi<18.5)
+             $("#status").html("Your body is under weight.<br><br> To gain weight eat carbs like rice, whole grains and do exercises avoid cradio because cardio burns more calories and you need to have calories for your body.")
+            else if(bmi>=18.5 && bmi<=24.9)
+            $("#status").html("Your body has normal weight.<br><br> For keep maintaining your body's weight you should do exercises like bench press,butterfly,bicep curls,plank and have balanced diet. For balanced diet you need to have protein, carbs, saturated fat and fiber")
+        else if(bmi>=25.0 && bmi<=29.9)
+            $("#status").html("Your body is in pre-obesity stage.<br><br>This is a initial stage of obesity.To reduce fat, do exercises, take low carbohydrate in diet and burn calories.")
+        else if(bmi>=30.0 && bmi<=34.9)
+            $("#status").html("Your body is in obesity class I stage.<br><br> To get fitness,do cardio exercises like squats, jumping jacks,mountin climbers and have a balenced diet.")
+        else if(bmi>=35.0 && bmi<=39.9)
+            $("#status").html("Your body is in obesity class II stage. In this stage you need to have low fat food and high protein diet like soya chunks,roasted chana, legumes, and lentils.")
+        else if(bmi>40)
+            $("#status").html("Your body is in obesity class III stage.This is a dangerous stage in this stage you need to have balanced diet and daily exercises, proper rest and keep your mind stress free, for this you should do meditation or pranayam.")  
+          })
+        })
+    </script>
+  </body>
+</html>

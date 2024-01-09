@@ -1,0 +1,425 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head>
+        <title>Temperature Converter - jQuery</title>
+        <meta charset="utf-8"> 
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="./js/jquery-3.7.1.min.js"></script>
+        <script src="./JS/Jqueryui/jquery-ui.min.js"></script>
+        <link href="./JS/Jqueryui/jquery-ui.min.css" rel="stylesheet" type="text/css">
+        <script>
+            $(document).ready(function() { 
+                $("#fgt").hide().slideDown(2000)
+    $( "#myForm" ).submit(function( event ) {
+        event.preventDefault();
+
+        const temperature = parseFloat($( "#temperature" ).val());
+        const from = $( "#list-from" ).val();
+        const to = $( "#list-to" ).val();
+        let result = "";
+
+        console.log("temperature: " + temperature);
+        console.log("from: " + from + " || to: " + to);
+
+        if(from === "C" && to === "C") {
+            result = temperature;
+        } else  if(from === "C" && to === "F") {
+            result = (temperature * 1.8) + 32;
+        } else if (from === "C" && to === "K") {
+            result = temperature + 273.15;
+        } else if (from === "F" && to === "C") {
+            result = (temperature - 32) / 1.8;
+        } else if (from === "F" && to === "F") {
+            result = temperature;
+        } else if (from === "F" && to === "K") {
+            result = (temperature + 459.67) * (5 / 9);
+        } else if (from === "K" && to === "C") {
+            result = temperature - 273.15;
+        } else if (from === "K" && to === "F") {
+            result = (temperature * (5 / 9)) - 459.67;
+        } else if (from === "K" && to === "K") {
+            result = temperature;
+        }
+    
+        if(result === "") {
+            $("#result-from").html(temperature + "°" + from + "=");
+            $("#result-to").html(temperature + "°" + to);
+        } else {
+            $("#result-from").html(temperature + "°" + from + "=");
+            $("#result-to").html(result.toFixed(2) + "°" + to);
+        }
+    });
+}); 
+
+        </script>
+        <style>
+            body {
+                
+                background-image: linear-gradient(to left,rgb(238, 227, 144),rgb(173, 240, 57));
+                
+   
+}
+
+.content {
+    border: 2px solid rgb(32, 33, 41);
+    width: 500px;
+    padding: 20px 40px 20px ;
+    box-shadow: 1px 8px 8px 1px rgb(80, 80, 72);
+    
+   
+   margin-bottom: 15px;
+   
+    border-radius: 8px;
+    background-image: url("./Image/weather1.jpg");
+}
+
+.content h1 {
+    font-size: 18px;
+    background-color: midnightblue;
+    color: #fff;
+    padding: 20px 30px;
+    width: 90%;
+    margin-left: 15px;
+    text-align: center;
+    text-transform: inherit;
+
+}
+
+input#temperature {
+    
+    width: 90%;
+    text-align: right;
+    padding: 10px;
+    margin: 3px 0;
+}
+
+.from {
+    float: left;
+    margin-right: 150px;
+}
+
+select {
+    width: 105px;
+    margin: 3px 0px;
+}
+
+#calculateBtn {
+    width: 100px;
+    padding: 10px;
+    margin: 3px 0;
+    margin-left: 150px;
+    text-align: center;
+}
+
+#summary {
+    background-color: #ccc;
+    width: 95%;
+    padding: 2px;
+    margin: 5px 0;
+}
+
+#summary p {
+    padding: 1px;
+    margin: 5px 5px;
+}
+
+#result-to {
+    font-weight: bold;
+}
+#recommendation
+{
+    font-weight: bold;
+}
+
+        #calculator {
+            width: 300px;
+            margin: 0 auto;
+        }
+    #dv{
+        padding: auto;
+        margin-left: 700px;
+    }
+
+        #calculateButton{
+
+    padding: 10px;
+    margin: 3px 0;
+    margin-left: 150px;
+    text-align: center;
+        }
+
+
+
+
+        * {
+               margin: 0px;
+               padding: 0px;
+               
+            }
+
+       .navbar ul li a{
+           font-size: 18px;
+           font-weight:600;
+           margin-left: 5px;
+           color: black;
+           
+       }
+       .navbar ul li a:hover{
+
+         color: #63d60b;
+       }
+       .clr{
+           color: #63d60b;
+       }
+       .clr1{
+           background-color: #eeeeee;
+       }
+       .clr2{
+         background-color:#63d60b;
+       }
+       .clr3{
+         background-color: #dd5a5a;
+         border-radius: 20px;
+         color: white;
+       }
+       .ffamily{
+           font-family:Comic Sans MS;
+       }
+       .heading{
+         color:#837e7e;
+       }
+       .backclr{
+         background-color: white;
+       }
+       .footer{
+         color: white;
+       }
+       .icn{
+           text-decoration: none;
+           color: white;
+       }
+       .fonw
+       {
+           font-family: Times New Roman;
+       }
+       .menscal
+       {
+         width: 100%;
+       }
+        </style>
+
+        
+
+    </head>
+<body>
+    <div class="container-fluid">
+        <div class="row bg-dark p-2">
+            <div class="col-sm-12 text-light ps-5">
+              <i class="fa-solid fa-envelope clr"></i> alphacod123@gmail.com
+            <i class="fa-solid fa-phone clr ms-2"></i> +91 7270841211&emsp;
+            </div>
+        </div>
+    <div class="row p-3 backclr sticky-top">
+        <div class="col-sm-3 fs-3 fw-bold pt-2 ps-5">Advance <x class="clr">Calculator</x></div>
+        <div class="col-sm-9">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  
+                    <div class="navbar-toggler-icon my-toggler d-flex justify-content-center align-items-center"
+                    style="background-image: none"><i class="fa-solid fa-bars" style="color:#eeeeee"></i></div>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="scientific1.html">Scientific</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="age.html">Age</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="currency.html">Currency</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="emi.html">EMI</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="weather.html">Weather</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="mensuration.html">Mensuration</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="capacity.html">Capacity</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="bmi.html">BMI</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="photoCom.html">Image Compressor</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="submark.html">Subject Marks</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </div>
+        <!-- <div class="col-sm-2 pt-2 ps-3"><a href="#bt"><input class="btn text-light" style="background-color: #ce1212;border-radius: 20px;width: 120px;" type="button" value="Book a Table"/></a></div> -->
+    </div>
+    <!-- end menu -->
+    <h1 style="text-align: center; background-color: aquamarine;">Temperature Convertor And Weather Change In JQuery..</h1>
+    <div >
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                
+                
+                <div class="content">
+                    <h1>Temperature Converter..</h1>
+                    <form action="" method="GET" id="myForm">
+                        <label for="monetary">Convert</label>
+                        <br>
+                        <input type="number" id="temperature"  placeholder="0.00"  required>
+                        <br>
+                        <div class="from">
+                            <label for="listFrom">From</label>
+                            <br>
+                            <select name="listFrom" size="3" id="list-from">
+                                <option value="C" selected>Celsius</option>
+                                <option value="F">Fahrenheit</option>
+                                <option value="K">Kelvin</option>
+                            </select>
+                        </div>
+                        <div class="to">
+                            <label for="listTo">To</label>
+                            <br>
+                            <select name="listTo" size="3" id="list-to">
+                                <option value="C">Celsius</option>
+                                <option value="F" selected>Fahrenheit</option>
+                                <option value="K">Kelvin</option>
+                            </select>
+                        </div>
+                        <input type="submit" value="Calculate" id="calculateBtn"style="color: aliceblue; background-color: rgb(82, 82, 161); font-size: 15px; cursor: pointer;">
+                        
+                    </form>
+                    <div id="summary">
+                        <p>Result: 
+                            <span id="result-from"></span>
+                            <span id="result-to"></span>
+                        </p>
+                    </div>
+            
+            
+                    
+            
+            --------------------------------------------------------------------------
+            
+            
+            
+            
+            <body>
+                <h1>Weather Changing Calculator</h1>
+                <label for="temperature-input">Enter Temperature (°C):</label>
+                <input type="number" id="temperature-input">
+                <input type="submit" value="Calculate" id="calculate-button" style="color: aliceblue; background-color: rgb(82, 82, 161); font-size: 15px; cursor: pointer;"><br><br>
+                <p >
+                    <span id="recommendation"></span>
+                </p>
+               
+            </body>
+            
+            
+                </div>
+            </div>
+            <div class="col-sm-5 mt-5">
+                <img id="fgt" src="./temperature-scales.webp" style="width: 100%;" class="img-thumbnail"/ >
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <!-- footer start  -->
+        <div class="row bg-dark pt-5">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 pb-4" style="border-bottom: 1px solid white;">
+              <div class="row footer">
+                <div class="col-sm-3"><p class="fs-5 fw-bold"><i class="fa-solid fa-location-dot"></i> &nbsp; Address</p><br/>
+                  <p class="ps-4">Chitrakoot Dham Karwi<br/>Sitapur Chauraha <br/>Uttar Pradesh 210205 India</p>
+                </div>
+                <div class="col-sm-3"><p class="fs-5 fw-bold"><i class="fa-solid fa-phone"></i> &nbsp; Contact Us</p><br/>
+                  <p class="ps-4"><b>Phone:+91</b> 7270841211<br/>+91 7270895438<br/><b>Email:</b> alphacod123@gmail.com</p>
+                </div>
+                <div class="col-sm-3"><p class="fs-5 fw-bold"><i class="fa-regular fa-clock"></i> &nbsp; About Us</p><br/>
+                  <p class="ps-4"><b>Mon-Sat:</b> 11AM-23:59PM<br/>Sunday: 11AM-5PM</p>
+                </div>
+                <div class="col-sm-3"><p class="fs-5 fw-bold"> &nbsp; Follow Us</p><br/>
+                  <a href="http://www.instagram.com" class="icn"> <i class="fa-brands fa-instagram ps-4 fs-2"></i></a>
+                            <a href="http://twitter.com"class="icn"> <i class="fa-brands fa-twitter ps-3 fs-2"></i></a>
+                           <a href="http://www.facebook.com"class="icn"><i class="fa-brands fa-facebook ps-3 fs-2"></i></a>
+                             <a href="http://www.linkedin.com"class="icn"> <i class="fa-brands fa-linkedin ps-3 fs-2"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="row footer d-flex justify-content-center pt-5 pb-5">
+              <div class="col-sm-4 text-center">&copy; Copyright <b>Advance Calculator. All Rights Reserved<br/>Designed by Team Alpha Coders</b></div>
+            </div>
+           </div>
+           <!-- footer end  -->
+    </div>
+    </div>
+
+
+        
+
+
+
+
+
+
+</body>
+<script>
+    $(document).ready(function() {
+    $('#calculate-button').on('click', function() {
+        
+        const temperatureCelsius = parseFloat($('#temperature-input').val());
+
+        if (!isNaN(temperatureCelsius)) {
+            const recommendation = getRecommendation(temperatureCelsius);
+            displayRecommendation(recommendation);
+        } else {
+            displayRecommendation('Please enter a valid temperature.');
+        }
+    });
+
+    function getRecommendation(temperatureCelsius) {
+        if (temperatureCelsius >= 30) {
+            return 'It\'s hot! Wear light clothing and use sunscreen.';
+        } else if (temperatureCelsius >= 15) {
+            return 'It\'s mild. Wear comfortable clothes for the day.';
+         } else if (temperatureCelsius >= 15) {
+            return 'It\'s mild. Wear comfortable clothes for the day.';
+        } else if (temperatureCelsius >= 0) {
+            return 'It\'s chilly. Layer up with a jacket.';
+        } else {
+            return 'It\'s cold. Bundle up with warm clothing.';
+        }
+    }
+
+    function displayRecommendation(message) {
+        $('#recommendation').text(message);
+    }
+});
+
+  </script>
+  <!-- script tag code end  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</html>
